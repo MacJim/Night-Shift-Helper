@@ -1,0 +1,5 @@
+# Ignores all .DS_Store files in the project directory.
+*.DS_Store
+
+# Ignores Xcode user data.
+xcuserdata
