@@ -24,6 +24,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D21BA7C022CA364C00BD436D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		D2BA1B5922C90D70002BF85D /* Night Shift Helper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Night Shift Helper"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2BA1B5C22C90D70002BF85D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D2BA1B6422C90E12002BF85D /* CoreBrightness.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBrightness.framework; path = ../../../../../../System/Library/PrivateFrameworks/CoreBrightness.framework; sourceTree = "<group>"; };
@@ -62,6 +63,7 @@
 		D2BA1B5B22C90D70002BF85D /* Night Shift Helper */ = {
 			isa = PBXGroup;
 			children = (
+				D21BA7C022CA364C00BD436D /* README.md */,
 				D2BA1B5C22C90D70002BF85D /* main.m */,
 				D2BA1B6622C90E32002BF85D /* CBBlueLightClient.h */,
 			);
