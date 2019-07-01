@@ -6,6 +6,10 @@
 //  Copyright © 2019 Creative Sub. All rights reserved.
 //
 
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
 #import <Foundation/Foundation.h>
 #import "CBBlueLightClient.h"
 
@@ -20,17 +24,17 @@ int main(int argc, const char * argv[]) {
             //TODO: Enable or disable night shift.
         } else if (argc == 3) {
             //Set current night shift color temperature.
-            if (![[NSString stringWithUTF8String:argv[1]] isEqualToString:@"set"]) {
-                NSLog(@"The second argument must be \"set\"!");
+            if (strcmp(argv[1], "set") != 0) {
+                printf("The second argument must be \"set\"!\n");
                 return 0;
             }
             
-            float newNightShiftTemperature = [[NSString stringWithUTF8String:argv[2]] floatValue];
+            float newNightShiftTemperature = strtof(argv[2], NULL);
             if ((newNightShiftTemperature > 1.0) || (newNightShiftTemperature < 0.0)) {
-                NSLog(@"The temperature must be within 0.0 and 1.0!");
+                printf("The temperature must be within 0.0 and 1.0!\n");
                 return 0;
             }
-            
+
             [blueLightClient setStrength:newNightShiftTemperature commit:true];
         }
     }
