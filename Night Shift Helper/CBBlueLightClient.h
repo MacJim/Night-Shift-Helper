@@ -13,7 +13,7 @@
 #import <Foundation/Foundation.h>
 
 
-///This is a partial copy of the CBBlueLightClient interface in the private CoreBrightness framework.
+/// This is a partial copy of the CBBlueLightClient interface in the private CoreBrightness framework.
 @interface CBBlueLightClient: NSObject
 - (BOOL)setStrength:(float)strength commit:(BOOL)commit;
 - (BOOL)setEnabled:(BOOL)enabled;

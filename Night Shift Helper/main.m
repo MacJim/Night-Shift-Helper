@@ -22,31 +22,31 @@ float getCurrentOptimalTemperature() {
 //    NSInteger minute = [dateComponents minute];
     
     switch (hour) {
-        //1. Warmest.
+        // 1. Warmest.
         case 24:
-            //Fall through.
+            // Fall through.
         case 0 ... 5:
             return 0.8;
             
-        //2
+        // 2
         case 23:
-            //Fall through.
+            // Fall through.
         case 6:
             return 0.7;
             
-        //3
+        // 3
         case 19 ... 22:
-            //Fall through.
+            // Fall through.
         case 7:
             return 0.5;
             
-        //4
+        // 4
         case 18:
-            //Fall through.
+            // Fall through.
         case 8:
             return 0.3;
             
-        //5. Coldest.
+        // 5. Coldest.
         default:
             return 0.1;
             break;
@@ -58,11 +58,12 @@ int main(int argc, const char * argv[]) {
         CBBlueLightClient* blueLightClient = [[CBBlueLightClient alloc] init];
         
         if (argc == 1) {
-            //Set Night Shift temperature automatically.
+            // Enables Night Shift and set temperature automatically.
             float optimalTemperature = getCurrentOptimalTemperature();
             [blueLightClient setStrength:optimalTemperature commit:YES];
+            [blueLightClient setEnabled:YES];
         } else if (argc == 2) {
-            //Enable or disable Night Shift.
+            // Enable or disable Night Shift.
             if (strcmp(argv[1], "enable") == 0) {
                 [blueLightClient setEnabled:YES];
             } else if (strcmp(argv[1], "disable") == 0) {
@@ -71,7 +72,7 @@ int main(int argc, const char * argv[]) {
                 printf("The second argument must be \"enable\" or \"disable\"!\n");
             }
         } else if (argc == 3) {
-            //Set current Night Shift color temperature.
+            // Set current Night Shift color temperature.
             if (strcmp(argv[1], "set") != 0) {
                 printf("The second argument must be \"set\"!\n");
                 return 0;
